@@ -2,7 +2,6 @@ altair==4.1.0
 appnope==0.1.2
 argon2-cffi==21.1.0
 astor==0.8.1
-backcall==.2.0
 backports.zoneinfo==0.2.1
 base58==2.1.1
 bleach==4.1.0
