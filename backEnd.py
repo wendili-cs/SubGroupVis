@@ -3,6 +3,7 @@ import pandas as pd
 from sklearn.cluster import KMeans
 import matplotlib.pyplot as plt
 
+
 class clusterModel:
   def __init__(self, normalized_data, mode = "kmeans"):
     self.mode = mode

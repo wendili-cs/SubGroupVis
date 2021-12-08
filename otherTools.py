@@ -3,6 +3,7 @@ import numpy as np
 import itertools
 from sklearn import preprocessing
 import random
+import streamlit as st
 
 def random_categories(categories, num = 3):
   N = len(categories)
@@ -12,7 +13,7 @@ def random_categories(categories, num = 3):
     default_list.append(categories[i])
   return default_list
 
-
+@st.cache(suppress_st_warning = True)
 def standardizer(df, numerics):
   numeric_segment = df[numerics]
   numeric_segment_copy = df[numerics].to_numpy()
@@ -21,6 +22,7 @@ def standardizer(df, numerics):
                                           columns = numerics)
   return normalized_numeric_segment
 
+@st.cache(suppress_st_warning = True)
 def get_subgroups(df: pd.DataFrame, categories: list):
   '''
   args:
@@ -39,7 +41,8 @@ def get_subgroups(df: pd.DataFrame, categories: list):
       idx = idx & (df[categories[i]]==feat)
     subgroups_dict[sg] = pd.Index(idx)
   return subgroups_dict
-
+  
+@st.cache(suppress_st_warning = True)
 def retrieve_levels(data, categories):
   '''
   Retrieve the levels of categorical variables
