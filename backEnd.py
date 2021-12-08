@@ -142,6 +142,24 @@ class backEndModel:
 # Visualizer class
 # We add different designs into this class
 
+import altair as alt
+from vega_datasets import data
+
+source = data.cars()
+
+
+
+class altair_template:
+  def __init__(self):
+    self.alt = alt.Chart(source).mark_circle(size=60).encode(
+        x='Horsepower',
+        y='Miles_per_Gallon',
+        color='Origin',
+        tooltip=['Name', 'Origin', 'Horsepower', 'Miles_per_Gallon']
+    ).interactive()
+
+  def get_fig(self):
+    return self.alt
 
 class ourVisualizer:
   def __init__(self, cur_index, similar_indices, different_indices, subgroups,data):
