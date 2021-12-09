@@ -100,9 +100,9 @@ button_column1, button_column2 = st.columns(2)
 button_column1.button("Switch to Histogram")
 button_column2.button("Switch to Different")
 
-altair_tmp = altair_template()
-temp_fig = altair_tmp.get_fig()
+# altair_tmp = altair_template()
+# temp_fig = altair_tmp.get_fig()
 
 with st.container():
-    # st.pyplot(similar_figures[0])
-    st.altair_chart(temp_fig)
+    st.pyplot(similar_figures[0])
+    # st.altair_chart(temp_fig)
