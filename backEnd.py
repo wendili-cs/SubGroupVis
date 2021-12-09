@@ -264,17 +264,18 @@ class ourVisualizer:
         for s in self.indices_Dict[mode]:
             current_group = self.getSubset(s)
             direction1, direction2 = self.getDirections(current_group, mode)
+            other_cols = [i for i in current_group.columns if i not in [direction1, direction2]]
             fig = alt.Chart(current_group).mark_circle().encode(
                 x=direction1,
                 y=direction2,
                 color=alt.value(colors[0]),
-                tooltip=['MaxHR']
+                tooltip=other_cols
             ).interactive() + \
-            alt.Chart(current_group).mark_circle().encode(
+            alt.Chart(self.cur_group).mark_circle().encode(
                 x=direction1,
                 y=direction2,
                 color=alt.value(colors[2]),
-                tooltip=['MaxHR']
+                tooltip=other_cols
             ).interactive()
             fig = fig.properties(title="Why are they " + mode + "?")
             figure_list.append(fig)
