@@ -104,5 +104,5 @@ button_column2.button("Switch to Different")
 # temp_fig = altair_tmp.get_fig()
 
 with st.container():
-    st.pyplot(similar_figures[0])
-    # st.altair_chart(temp_fig)
+    # st.pyplot(similar_figures[0])
+    st.altair_chart(temp_fig)
