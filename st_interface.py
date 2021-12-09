@@ -105,4 +105,4 @@ button_column2.button("Switch to Different")
 
 with st.container():
     # st.pyplot(similar_figures[0])
-    st.altair_chart(temp_fig)
+    st.altair_chart(similar_figures[0])
